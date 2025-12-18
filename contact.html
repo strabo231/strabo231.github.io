@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sean Baggett</title>
+    <meta name="description" content="Get in touch with Sean Baggett">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+            background: #1e1e1e;
+            color: #50FA7B;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border: 2px solid #FFB86C;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: #282828;
+        }
+
+        .header h1 {
+            color: #FFB86C;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #F8F8F2;
+            font-size: 1.2em;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #FFB86C;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #FFB86C;
+            background: #282828;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: #FFB86C;
+            color: #1e1e1e;
+        }
+
+        .section {
+            background: #282828;
+            border: 2px solid #44475a;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #BD93F9;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #F8F8F2;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .contact-method {
+            background: #44475a;
+            border-left: 4px solid #8BE9FD;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            border-left-color: #50FA7B;
+            transform: translateX(10px);
+        }
+
+        .contact-method h3 {
+            color: #8BE9FD;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-method p {
+            color: #F8F8F2;
+            margin-bottom: 10px;
+        }
+
+        .contact-link {
+            color: #50FA7B;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-bottom: 2px solid #50FA7B;
+        }
+
+        .contact-link:hover {
+            color: #8BE9FD;
+            border-bottom-color: #8BE9FD;
+        }
+
+        .response-time {
+            background: #282828;
+            border: 2px solid #50FA7B;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .response-time h2 {
+            color: #50FA7B;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .response-time p {
+            color: #F8F8F2;
+        }
+
+        .guidelines {
+            background: #282828;
+            border: 2px solid #FF79C6;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .guidelines h2 {
+            color: #FF79C6;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .guidelines ul {
+            list-style: none;
+        }
+
+        .guidelines li {
+            color: #F8F8F2;
+            padding: 8px 0;
+        }
+
+        .guidelines li:before {
+            content: "→ ";
+            color: #50FA7B;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>$ contact.sh</h1>
+            <p>> Get in touch</p>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">← Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="sponsor.html">Sponsor</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="section">
+            <h2>// Best Ways to Reach Me</h2>
+            
+            <div class="contact-method">
+                <h3>GitHub Issues</h3>
+                <p>For bug reports, feature requests, or technical questions about a specific tool.</p>
+                <a href="https://github.com/strabo231" class="contact-link">Open an issue on the relevant repo →</a>
+                <p style="margin-top: 10px; color: #6272a4; font-size: 0.9em;">Response time: Usually within 48 hours</p>
+            </div>
+
+            <div class="contact-method">
+                <h3>GitHub Discussions</h3>
+                <p>For general questions, ideas, or community discussions.</p>
+                <a href="https://github.com/strabo231" class="contact-link">Start a discussion →</a>
+                <p style="margin-top: 10px; color: #6272a4; font-size: 0.9em;">Response time: 1-3 days</p>
+            </div>
+
+            <div class="contact-method">
+                <h3>GitHub Sponsors</h3>
+                <p>For priority support, commercial licensing inquiries, or custom development requests.</p>
+                <a href="https://github.com/sponsors/strabo231" class="contact-link">Become a sponsor →</a>
+                <p style="margin-top: 10px; color: #6272a4; font-size: 0.9em;">Response time: Sponsors get priority (24-48 hours)</p>
+            </div>
+        </div>
+
+        <div class="response-time">
+            <h2>// Response Times</h2>
+            <p><strong style="color: #50FA7B;">Free Users:</strong> I respond to issues and questions as time allows, usually within 2-5 days.</p>
+            <p style="margin-top: 10px;"><strong style="color: #FFB86C;">Sponsors:</strong> Priority support with guaranteed response within 24-48 hours, depending on tier.</p>
+        </div>
+
+        <div class="guidelines">
+            <h2>// Before You Contact</h2>
+            <ul>
+                <li>Check if there's an existing issue or discussion about your topic</li>
+                <li>For bugs, include your OS version and any error messages</li>
+                <li>For feature requests, explain the use case and why it would be helpful</li>
+                <li>Be respectful and patient—I'm one person maintaining multiple projects</li>
+                <li>Consider sponsoring if you need faster responses or custom work</li>
+            </ul>
+        </div>
+
+        <div class="section" style="margin-top: 30px; text-align: center; border-color: #50FA7B;">
+            <h2>// Links</h2>
+            <p style="margin-top: 20px;">
+                <a href="https://github.com/strabo231" style="color: #8BE9FD;">GitHub: @strabo231</a>
+            </p>
+            <p>
+                <a href="https://orcid.org/0009-0003-4402-0265" style="color: #FFB86C;">ORCID: 0009-0003-4402-0265</a>
+            </p>
+            <p style="margin-top: 30px; font-size: 0.9em; color: #6272a4;">
+                For spam/security concerns: Please report via GitHub's security features
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sean Baggett</title>
+    <meta name="description" content="Developer tools and CLI utilities by Sean Baggett">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+            background: #1e1e1e;
+            color: #50FA7B;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border: 2px solid #50FA7B;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: #282828;
+        }
+
+        .header h1 {
+            color: #8BE9FD;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #F8F8F2;
+            font-size: 1.1em;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #FFB86C;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #FFB86C;
+            background: #282828;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: #FFB86C;
+            color: #1e1e1e;
+        }
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category h2 {
+            color: #BD93F9;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #BD93F9;
+            padding-bottom: 10px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 2px solid #44475a;
+            padding: 20px;
+            background: #282828;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #50FA7B;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(80, 250, 123, 0.3);
+        }
+
+        .project-card h3 {
+            color: #8BE9FD;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #F8F8F2;
+            margin-bottom: 15px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #44475a;
+            color: #FFB86C;
+            padding: 5px 10px;
+            font-size: 0.85em;
+            border: 1px solid #FFB86C;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #50FA7B;
+            text-decoration: none;
+            border: 1px solid #50FA7B;
+            padding: 8px 16px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: #50FA7B;
+            color: #1e1e1e;
+        }
+
+        .license {
+            color: #6272a4;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>$ ./projects.sh</h1>
+            <p>> Developer Tools & CLI Utilities</p>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">← Home</a>
+            <a href="sponsor.html">Sponsor</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- System & DevOps Tools -->
+        <section class="category">
+            <h2>// System & DevOps Tools</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>sysmon</h3>
+                    <p>Beautiful system resource monitor with dashboard, process management, and network monitoring</p>
+                    <div class="project-tags">
+                        <span class="tag">linux</span>
+                        <span class="tag">monitoring</span>
+                        <span class="tag">dashboard</span>
+                    </div>
+                    <a href="https://github.com/strabo231/sysmon" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>snapshot</h3>
+                    <p>System state snapshot and comparison tool - know exactly what changed</p>
+                    <div class="project-tags">
+                        <span class="tag">linux</span>
+                        <span class="tag">troubleshooting</span>
+                        <span class="tag">sysadmin</span>
+                    </div>
+                    <a href="https://github.com/strabo231/snapshot" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>portman</h3>
+                    <p>Smart port manager - kill by port, find alternatives, never fight with lsof again</p>
+                    <div class="project-tags">
+                        <span class="tag">networking</span>
+                        <span class="tag">devops</span>
+                        <span class="tag">cli</span>
+                    </div>
+                    <a href="https://github.com/strabo231/portman" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>CleanUbuntu</h3>
+                    <p>Windows-like disk cleanup for Ubuntu. Powerful maintenance tool for keeping your system clean.</p>
+                    <div class="project-tags">
+                        <span class="tag">ubuntu</span>
+                        <span class="tag">maintenance</span>
+                        <span class="tag">apt</span>
+                    </div>
+                    <a href="https://github.com/strabo231/CleanUbuntu" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Git & Security -->
+        <section class="category">
+            <h2>// Git & Security</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>gitbackup</h3>
+                    <p>Automated git repository backup manager - never lose your code again</p>
+                    <div class="project-tags">
+                        <span class="tag">git</span>
+                        <span class="tag">backup</span>
+                        <span class="tag">automation</span>
+                    </div>
+                    <a href="https://github.com/strabo231/gitbackup" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>gitsecure</h3>
+                    <p>Git secret scanner and protection tool - prevent API keys and credentials from being committed</p>
+                    <div class="project-tags">
+                        <span class="tag">security</span>
+                        <span class="tag">secrets</span>
+                        <span class="tag">git</span>
+                    </div>
+                    <a href="https://github.com/strabo231/gitsecure" class="project-link">View on GitHub →</a>
+                    <div class="license">GPL v3 / Commercial</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>secureshred</h3>
+                    <p>Secure file deletion tool with multiple overwrite passes. Military-grade data destruction.</p>
+                    <div class="project-tags">
+                        <span class="tag">security</span>
+                        <span class="tag">privacy</span>
+                        <span class="tag">cli</span>
+                    </div>
+                    <a href="https://github.com/strabo231/secureshred" class="project-link">View on GitHub →</a>
+                    <div class="license">GPL v3 / Commercial</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Tools -->
+        <section class="category">
+            <h2>// Development Tools</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>devenv</h3>
+                    <p>Universal development environment manager for Python, Node, Ruby, Java, and Go</p>
+                    <div class="project-tags">
+                        <span class="tag">python</span>
+                        <span class="tag">nodejs</span>
+                        <span class="tag">ruby</span>
+                        <span class="tag">java</span>
+                        <span class="tag">golang</span>
+                    </div>
+                    <a href="https://github.com/strabo231/devenv" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>querycraft</h3>
+                    <p>SQL query builder that generates clean, correct SQL from simple commands. No more syntax errors!</p>
+                    <div class="project-tags">
+                        <span class="tag">sql</span>
+                        <span class="tag">database</span>
+                        <span class="tag">productivity</span>
+                    </div>
+                    <a href="https://github.com/strabo231/querycraft" class="project-link">View on GitHub →</a>
+                    <div class="license">GPL v3 / Commercial</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>clipstack</h3>
+                    <p>Never lose what you copied! ClipStack remembers everything you copy so you can find it later.</p>
+                    <div class="project-tags">
+                        <span class="tag">clipboard</span>
+                        <span class="tag">productivity</span>
+                        <span class="tag">cli</span>
+                    </div>
+                    <a href="https://github.com/strabo231/clipstack" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automation & Utilities -->
+        <section class="category">
+            <h2>// Automation & Utilities</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>cronmanager</h3>
+                    <p>User-friendly cron job management for the command line. Schedule tasks without the headache.</p>
+                    <div class="project-tags">
+                        <span class="tag">automation</span>
+                        <span class="tag">cron</span>
+                        <span class="tag">unix</span>
+                    </div>
+                    <a href="https://github.com/strabo231/cronmanager" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+
+                <div class="project-card">
+                    <h3>pack</h3>
+                    <p>Simple file packaging utility for Ubuntu. Compress and archive with ease.</p>
+                    <div class="project-tags">
+                        <span class="tag">compression</span>
+                        <span class="tag">packaging</span>
+                        <span class="tag">ubuntu</span>
+                    </div>
+                    <a href="https://github.com/strabo231/pack" class="project-link">View on GitHub →</a>
+                    <div class="license">MIT License</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="header" style="margin-top: 40px; text-align: center;">
+            <p style="color: #50FA7B;">★ Star repos you find useful | 💖 <a href="sponsor.html" style="color: #FFB86C;">Sponsor my work</a> | 🐛 Report bugs</p>
+        </div>
+    </div>
+</body>
+</html>

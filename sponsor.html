@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor - Sean Baggett</title>
+    <meta name="description" content="Support my open source development work">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+            background: #1e1e1e;
+            color: #50FA7B;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border: 2px solid #FF79C6;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: #282828;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #FF79C6;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #F8F8F2;
+            font-size: 1.2em;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #FFB86C;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #FFB86C;
+            background: #282828;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: #FFB86C;
+            color: #1e1e1e;
+        }
+
+        .intro {
+            background: #282828;
+            border: 2px solid #8BE9FD;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            color: #8BE9FD;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #F8F8F2;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .tiers {
+            margin-bottom: 30px;
+        }
+
+        .tier {
+            background: #282828;
+            border: 2px solid #44475a;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .tier:hover {
+            border-color: #FF79C6;
+            transform: translateX(10px);
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tier-name {
+            color: #BD93F9;
+            font-size: 1.8em;
+        }
+
+        .tier-price {
+            color: #50FA7B;
+            font-size: 1.5em;
+        }
+
+        .tier-description {
+            color: #F8F8F2;
+            margin-bottom: 15px;
+        }
+
+        .benefits {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .benefits li {
+            color: #8BE9FD;
+            padding: 5px 0;
+        }
+
+        .benefits li:before {
+            content: "→ ";
+            color: #50FA7B;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF79C6 0%, #BD93F9 100%);
+            color: #1e1e1e;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 30px 0;
+            border: none;
+            transition: all 0.3s;
+            text-align: center;
+            display: block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 121, 198, 0.5);
+        }
+
+        .why-sponsor {
+            background: #282828;
+            border: 2px solid #50FA7B;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .why-sponsor h2 {
+            color: #50FA7B;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .why-sponsor ul {
+            list-style: none;
+        }
+
+        .why-sponsor li {
+            color: #F8F8F2;
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .why-sponsor li:before {
+            content: "✓ ";
+            color: #50FA7B;
+            font-weight: bold;
+        }
+
+        .alternatives {
+            background: #282828;
+            border: 2px solid #FFB86C;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .alternatives h2 {
+            color: #FFB86C;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .alternatives p {
+            color: #F8F8F2;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tier-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💖 Sponsor My Work</h1>
+            <p>> Support open source development</p>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">← Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="intro">
+            <h2>// Why Sponsor?</h2>
+            <p>All my tools are free and open source. Your sponsorship helps me dedicate more time to building, maintaining, and improving these tools instead of treating them as a weekend hobby.</p>
+            <p>Every sponsor, no matter the tier, makes a real difference and helps keep these projects alive and actively maintained.</p>
+        </div>
+
+        <a href="https://github.com/sponsors/strabo231" class="cta-button">
+            ★ Become a Sponsor on GitHub →
+        </a>
+
+        <div class="tiers">
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">☕ Coffee Supporter</div>
+                    <div class="tier-price">$5/month</div>
+                </div>
+                <div class="tier-description">Buy me a coffee and help keep these tools maintained!</div>
+                <ul class="benefits">
+                    <li>Sponsor badge on your profile</li>
+                    <li>Name in SUPPORTERS.md (optional)</li>
+                    <li>My genuine gratitude</li>
+                </ul>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">🛠️ Active Contributor</div>
+                    <div class="tier-price">$15/month</div>
+                </div>
+                <div class="tier-description">Directly support active development of these tools</div>
+                <ul class="benefits">
+                    <li>All previous benefits</li>
+                    <li>Priority bug reports (48-hour response)</li>
+                    <li>Vote on feature roadmap</li>
+                    <li>Early access to new tools</li>
+                </ul>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">💼 Professional User</div>
+                    <div class="tier-price">$50/month</div>
+                </div>
+                <div class="tier-description">For professionals who rely on these tools daily</div>
+                <ul class="benefits">
+                    <li>All previous benefits</li>
+                    <li>Direct support via email</li>
+                    <li>Feature requests prioritized</li>
+                    <li>Your company logo in README (if desired)</li>
+                    <li>Monthly development updates</li>
+                </ul>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">🏢 Business License</div>
+                    <div class="tier-price">$100/month</div>
+                </div>
+                <div class="tier-description">Commercial license for teams and businesses</div>
+                <ul class="benefits">
+                    <li>All previous benefits</li>
+                    <li>Commercial license for all tools</li>
+                    <li>Guaranteed 24-hour response for critical issues</li>
+                    <li>Monthly 30-min consultation call</li>
+                    <li>Custom feature development consideration</li>
+                </ul>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">🚀 Enterprise Partner</div>
+                    <div class="tier-price">$250/month</div>
+                </div>
+                <div class="tier-description">Full support for mission-critical deployments</div>
+                <ul class="benefits">
+                    <li>All previous benefits</li>
+                    <li>Dedicated support</li>
+                    <li>Custom integrations</li>
+                    <li>Private repository access for enterprise features</li>
+                    <li>Quarterly roadmap input sessions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="why-sponsor">
+            <h2>// Your Support Helps Me:</h2>
+            <ul>
+                <li>Maintain and improve existing tools</li>
+                <li>Fix bugs faster</li>
+                <li>Develop new features people request</li>
+                <li>Keep documentation up to date</li>
+                <li>Create more free developer tools</li>
+                <li>Dedicate more time to open source</li>
+            </ul>
+        </div>
+
+        <div class="alternatives">
+            <h2>// Not Ready to Sponsor?</h2>
+            <p>You can still help by:</p>
+            <p>★ Starring repositories you find useful</p>
+            <p>🐦 Sharing on social media</p>
+            <p>🐛 Reporting bugs and issues</p>
+            <p>📝 Improving documentation</p>
+            <p>💡 Suggesting features</p>
+        </div>
+
+        <a href="https://github.com/sponsors/strabo231" class="cta-button">
+            ★ Sponsor Now on GitHub →
+        </a>
+    </div>
+</body>
+</html>

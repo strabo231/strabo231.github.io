@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Sean Baggett</title>
+    <meta name="description" content="About Sean Baggett and my open source work">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+            background: #1e1e1e;
+            color: #50FA7B;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border: 2px solid #8BE9FD;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: #282828;
+        }
+
+        .header h1 {
+            color: #8BE9FD;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #F8F8F2;
+            font-size: 1.2em;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #FFB86C;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #FFB86C;
+            background: #282828;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: #FFB86C;
+            color: #1e1e1e;
+        }
+
+        .section {
+            background: #282828;
+            border: 2px solid #44475a;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #BD93F9;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #BD93F9;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            color: #F8F8F2;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: #44475a;
+            border: 2px solid #50FA7B;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            color: #50FA7B;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #F8F8F2;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #44475a;
+            color: #8BE9FD;
+            padding: 8px 15px;
+            border: 1px solid #8BE9FD;
+        }
+
+        .philosophy {
+            background: #282828;
+            border-left: 4px solid #50FA7B;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .philosophy p {
+            color: #F8F8F2;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>$ whoami</h1>
+            <p>> About Sean Baggett</p>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">← Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="sponsor.html">Sponsor</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="section">
+            <h2>// Introduction</h2>
+            <p>Hey! I'm Sean, and I build CLI tools that solve the annoying problems developers face daily.</p>
+            <p>You know those repetitive tasks that eat up 10 minutes of your day? The ones where you think "there has to be a better way"? That's what I build tools for.</p>
+            <p>I believe good developer tools should be:</p>
+            <div class="philosophy">
+                <p>→ Simple to use, even without reading docs</p>
+                <p>→ Free and open source for everyone</p>
+                <p>→ Solving real problems, not theoretical ones</p>
+                <p>→ Well-maintained and actively supported</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">16+</div>
+                <div class="stat-label">Open Source Tools</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free for Personal Use</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Problems Solved</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>// What I Build</h2>
+            <p>My focus is on practical CLI utilities for Linux/Ubuntu that developers and sysadmins actually use. No fluff, no over-engineering—just tools that work.</p>
+            <p>Categories include:</p>
+            <div class="tech-list">
+                <span class="tech-tag">System Monitoring</span>
+                <span class="tech-tag">Git Tools</span>
+                <span class="tech-tag">Security Utilities</span>
+                <span class="tech-tag">DevOps Automation</span>
+                <span class="tech-tag">Backup Solutions</span>
+                <span class="tech-tag">Development Environments</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>// Tech Stack</h2>
+            <p>Most of my tools are built with Shell scripting (Bash) because they need to be lightweight, portable, and easy to audit. Simple problems deserve simple solutions.</p>
+            <div class="tech-list">
+                <span class="tech-tag">Bash/Shell</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Linux/Ubuntu</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">CLI Design</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>// Philosophy</h2>
+            <p>I'm not trying to build the next viral startup or reinvent the wheel. I'm just making tools that I wish existed when I ran into these problems myself.</p>
+            <p>If these tools save you time, that's awesome. If they help you work more efficiently, even better. If you want to support the work, I have a GitHub Sponsors set up, but there's no pressure—the tools are free either way.</p>
+            <p>Open source is about sharing knowledge and making everyone's life easier. That's the vibe here.</p>
+        </div>
+
+        <div class="section">
+            <h2>// Get Involved</h2>
+            <p>Want to contribute? Found a bug? Have a feature request? I'm always open to:</p>
+            <div class="philosophy">
+                <p>→ Pull requests and code contributions</p>
+                <p>→ Bug reports and feature suggestions</p>
+                <p>→ Documentation improvements</p>
+                <p>→ Spreading the word about these tools</p>
+                <p>→ Sponsoring development (if you're able)</p>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; border-color: #50FA7B;">
+            <h2>// Connect</h2>
+            <p style="margin-top: 20px;">
+                <a href="https://github.com/strabo231" style="color: #8BE9FD; text-decoration: none;">GitHub: @strabo231</a>
+            </p>
+            <p>
+                <a href="https://orcid.org/0009-0003-4402-0265" style="color: #FFB86C; text-decoration: none;">ORCID: 0009-0003-4402-0265</a>
+            </p>
+            <p style="margin-top: 20px;">
+                <a href="sponsor.html" style="color: #FF79C6; text-decoration: none; font-size: 1.2em;">💖 Support My Work</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
