@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Sean Baggett</title>
-    <meta name="description" content="Developer tools and CLI utilities by Sean Baggett">
     <style>
+        :root {
+            /* OhMyPosh Color Palette */
+            --primary: #3A86FF;
+            --accent: #8338EC;
+            --success: #06FFA5;
+            --warning: #FFBE0B;
+            --danger: #FF006E;
+            --bg-dark: #1E1E2E;
+            --bg-darker: #181825;
+            --text: #F8F8F2;
+            --text-dim: #6C7086;
+            --border: #313244;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,11 +26,11 @@
         }
 
         body {
-            font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
-            background: #1e1e1e;
-            color: #50FA7B;
+            font-family: 'Courier New', monospace;
+            background: var(--bg-dark);
+            color: var(--text);
             line-height: 1.6;
-            padding: 20px;
+            padding: 2rem;
         }
 
         .container {
@@ -25,321 +38,652 @@
             margin: 0 auto;
         }
 
-        .header {
-            border: 2px solid #50FA7B;
-            padding: 20px;
-            margin-bottom: 30px;
-            background: #282828;
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
         }
 
-        .header h1 {
-            color: #8BE9FD;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        h1 {
+            color: var(--success);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .header p {
-            color: #F8F8F2;
-            font-size: 1.1em;
+        h1::before {
+            content: "$ ";
+            color: var(--accent);
         }
 
-        .nav {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 1rem;
         }
 
-        .nav a {
-            color: #FFB86C;
+        .subtitle::before {
+            content: "> ";
+            color: var(--primary);
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            color: var(--primary);
             text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid #FFB86C;
-            background: #282828;
-            transition: all 0.3s;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
         }
 
-        .nav a:hover {
-            background: #FFB86C;
-            color: #1e1e1e;
+        nav a:hover {
+            color: var(--success);
         }
 
-        .category {
-            margin-bottom: 40px;
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
 
-        .category h2 {
-            color: #BD93F9;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #BD93F9;
-            padding-bottom: 10px;
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--success);
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .featured {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--accent);
+        }
+
+        .featured h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .featured h2::before {
+            content: "// ";
+            opacity: 0.7;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .featured-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-card h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .featured-badge {
+            background: var(--warning);
+            color: var(--bg-dark);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .featured-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        h2::before {
+            content: "// ";
+            color: var(--text-dim);
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card {
-            border: 2px solid #44475a;
-            padding: 20px;
-            background: #282828;
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
             transition: all 0.3s;
         }
 
         .project-card:hover {
-            border-color: #50FA7B;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(80, 250, 123, 0.3);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(131, 56, 236, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
         }
 
         .project-card h3 {
-            color: #8BE9FD;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--warning);
+            font-size: 0.9rem;
         }
 
         .project-card p {
-            color: #F8F8F2;
-            margin-bottom: 15px;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
-        .project-tags {
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .tag {
-            background: #44475a;
-            color: #FFB86C;
-            padding: 5px 10px;
-            font-size: 0.85em;
-            border: 1px solid #FFB86C;
+            background: var(--border);
+            color: var(--text);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
         }
 
-        .project-link {
-            display: inline-block;
-            color: #50FA7B;
-            text-decoration: none;
-            border: 1px solid #50FA7B;
-            padding: 8px 16px;
-            margin-right: 10px;
-            transition: all 0.3s;
-        }
-
-        .project-link:hover {
-            background: #50FA7B;
-            color: #1e1e1e;
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
         }
 
         .license {
-            color: #6272a4;
-            font-size: 0.9em;
-            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .license.commercial {
+            color: var(--warning);
+            font-weight: bold;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--success);
+        }
+
+        .project-link::after {
+            content: " →";
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+            text-align: center;
+            color: var(--text-dim);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--success);
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
+            body {
+                padding: 1rem;
             }
-            
+
             .project-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>$ ./projects.sh</h1>
-            <p>> Developer Tools & CLI Utilities</p>
+        <header>
+            <h1>./projects.sh</h1>
+            <p class="subtitle">Developer Tools & CLI Utilities</p>
+            <nav>
+                <a href="index.html">← Home</a>
+                <a href="sponsor.html">Sponsor</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <!-- GitHub Stats -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Open Source Tools</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free for Personal Use</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Commercial Options</div>
+            </div>
         </div>
 
-        <nav class="nav">
-            <a href="index.html">← Home</a>
-            <a href="sponsor.html">Sponsor</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <!-- Featured Projects -->
+        <div class="featured">
+            <h2>🌟 Featured Projects</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <h3>
+                        GitSecure
+                        <span class="featured-badge">💰 COMMERCIAL</span>
+                    </h3>
+                    <p>Prevent catastrophic secret leaks. One leaked AWS key can cost $10,000+ in hours. Scan for 100+ secret patterns before they hit your repo.</p>
+                    <div class="featured-stats">
+                        <span>🔐 Enterprise Ready</span>
+                        <span>💼 GPL v3 / Commercial</span>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <h3>
+                        ImgBatch
+                        <span class="featured-badge">💎 PRO COMING</span>
+                    </h3>
+                    <p>Process thousands of images in seconds. Resize, compress, convert - perfect for e-commerce, photography, and web development. Save 70%+ file sizes.</p>
+                    <div class="featured-stats">
+                        <span>📸 Batch Processing</span>
+                        <span>🤖 AI Features Planned</span>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <h3>
+                        EnvVault
+                        <span class="featured-badge">🔐 SECURITY</span>
+                    </h3>
+                    <p>Stop committing secrets! Encrypted environment variable manager across dev, staging, and production. Never leak credentials again.</p>
+                    <div class="featured-stats">
+                        <span>🔒 Encrypted Storage</span>
+                        <span>🎯 Multi-Environment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- System & DevOps Tools -->
-        <section class="category">
-            <h2>// System & DevOps Tools</h2>
+        <section>
+            <h2>System & DevOps Tools</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>sysmon</h3>
+                    <div class="project-header">
+                        <h3>sysmon</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/sysmon?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Beautiful system resource monitor with dashboard, process management, and network monitoring</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">linux</span>
                         <span class="tag">monitoring</span>
                         <span class="tag">dashboard</span>
                     </div>
-                    <a href="https://github.com/strabo231/sysmon" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/sysmon" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>snapshot</h3>
+                    <div class="project-header">
+                        <h3>snapshot</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/snapshot?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>System state snapshot and comparison tool - know exactly what changed</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">linux</span>
                         <span class="tag">troubleshooting</span>
                         <span class="tag">sysadmin</span>
                     </div>
-                    <a href="https://github.com/strabo231/snapshot" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/snapshot" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>portman</h3>
+                    <div class="project-header">
+                        <h3>portman</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/portman?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Smart port manager - kill by port, find alternatives, never fight with lsof again</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">networking</span>
                         <span class="tag">devops</span>
                         <span class="tag">cli</span>
                     </div>
-                    <a href="https://github.com/strabo231/portman" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/portman" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>CleanUbuntu</h3>
+                    <div class="project-header">
+                        <h3>CleanUbuntu</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/CleanUbuntu?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Windows-like disk cleanup for Ubuntu. Powerful maintenance tool for keeping your system clean.</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">ubuntu</span>
                         <span class="tag">maintenance</span>
                         <span class="tag">apt</span>
                     </div>
-                    <a href="https://github.com/strabo231/CleanUbuntu" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/CleanUbuntu" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Git & Security -->
-        <section class="category">
-            <h2>// Git & Security</h2>
+        <section>
+            <h2>Git & Security</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>gitbackup</h3>
+                    <div class="project-header">
+                        <h3>gitsecure</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/gitsecure?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
+                    <p>Git secret scanner and protection tool - prevent API keys and credentials from being committed. Detects 100+ secret patterns.</p>
+                    <div class="tags">
+                        <span class="tag">security</span>
+                        <span class="tag">secrets</span>
+                        <span class="tag">git</span>
+                        <span class="tag">💰 commercial</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="license commercial">GPL v3 / Commercial</span>
+                        <a href="https://github.com/strabo231/gitsecure" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>gitbackup</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/gitbackup?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Automated git repository backup manager - never lose your code again</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">git</span>
                         <span class="tag">backup</span>
                         <span class="tag">automation</span>
                     </div>
-                    <a href="https://github.com/strabo231/gitbackup" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
-                </div>
-
-                <div class="project-card">
-                    <h3>gitsecure</h3>
-                    <p>Git secret scanner and protection tool - prevent API keys and credentials from being committed</p>
-                    <div class="project-tags">
-                        <span class="tag">security</span>
-                        <span class="tag">secrets</span>
-                        <span class="tag">git</span>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/gitbackup" class="project-link">View on GitHub</a>
                     </div>
-                    <a href="https://github.com/strabo231/gitsecure" class="project-link">View on GitHub →</a>
-                    <div class="license">GPL v3 / Commercial</div>
                 </div>
 
                 <div class="project-card">
-                    <h3>secureshred</h3>
-                    <p>Secure file deletion tool with multiple overwrite passes. Military-grade data destruction.</p>
-                    <div class="project-tags">
+                    <div class="project-header">
+                        <h3>secureshred</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/secureshred?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
+                    <p>Secure file deletion tool with multiple overwrite passes. Military-grade data destruction using DoD and Gutmann methods.</p>
+                    <div class="tags">
                         <span class="tag">security</span>
                         <span class="tag">privacy</span>
                         <span class="tag">cli</span>
                     </div>
-                    <a href="https://github.com/strabo231/secureshred" class="project-link">View on GitHub →</a>
-                    <div class="license">GPL v3 / Commercial</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/secureshred" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>envvault</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/envvault?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
+                    <p>Secure environment variable manager with encrypted storage across dev, staging, and production. Stop committing secrets!</p>
+                    <div class="tags">
+                        <span class="tag">security</span>
+                        <span class="tag">secrets</span>
+                        <span class="tag">devops</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/envvault" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Development Tools -->
-        <section class="category">
-            <h2>// Development Tools</h2>
+        <section>
+            <h2>Development Tools</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>devenv</h3>
+                    <div class="project-header">
+                        <h3>imgbatch</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/imgbatch?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
+                    <p>Batch image processor. Resize, compress, convert thousands of images in seconds. Perfect for e-commerce and photography.</p>
+                    <div class="tags">
+                        <span class="tag">images</span>
+                        <span class="tag">batch</span>
+                        <span class="tag">productivity</span>
+                        <span class="tag">💎 pro soon</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/imgbatch" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>devenv</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/devenv?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Universal development environment manager for Python, Node, Ruby, Java, and Go</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">python</span>
                         <span class="tag">nodejs</span>
                         <span class="tag">ruby</span>
                         <span class="tag">java</span>
                         <span class="tag">golang</span>
                     </div>
-                    <a href="https://github.com/strabo231/devenv" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/devenv" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>querycraft</h3>
+                    <div class="project-header">
+                        <h3>querycraft</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/querycraft?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>SQL query builder that generates clean, correct SQL from simple commands. No more syntax errors!</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">sql</span>
                         <span class="tag">database</span>
                         <span class="tag">productivity</span>
                     </div>
-                    <a href="https://github.com/strabo231/querycraft" class="project-link">View on GitHub →</a>
-                    <div class="license">GPL v3 / Commercial</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/querycraft" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>clipstack</h3>
+                    <div class="project-header">
+                        <h3>logmaster</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/logmaster?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
+                    <p>Smart log file analyzer. Find errors, generate stats, and monitor logs in real-time. Stop grep-ing through GBs of logs.</p>
+                    <div class="tags">
+                        <span class="tag">logging</span>
+                        <span class="tag">devops</span>
+                        <span class="tag">debugging</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/logmaster" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>clipstack</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/clipstack?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Never lose what you copied! ClipStack remembers everything you copy so you can find it later.</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">clipboard</span>
                         <span class="tag">productivity</span>
                         <span class="tag">cli</span>
                     </div>
-                    <a href="https://github.com/strabo231/clipstack" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/clipstack" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Automation & Utilities -->
-        <section class="category">
-            <h2>// Automation & Utilities</h2>
+        <section>
+            <h2>Automation & Utilities</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>cronmanager</h3>
+                    <div class="project-header">
+                        <h3>cronmanager</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/cronmanager?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>User-friendly cron job management for the command line. Schedule tasks without the headache.</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">automation</span>
                         <span class="tag">cron</span>
                         <span class="tag">unix</span>
                     </div>
-                    <a href="https://github.com/strabo231/cronmanager" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/cronmanager" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>pack</h3>
+                    <div class="project-header">
+                        <h3>pack</h3>
+                        <div class="stars">⭐ <img src="https://img.shields.io/github/stars/strabo231/pack?style=flat-square&color=FFBE0B" alt="stars"></div>
+                    </div>
                     <p>Simple file packaging utility for Ubuntu. Compress and archive with ease.</p>
-                    <div class="project-tags">
+                    <div class="tags">
                         <span class="tag">compression</span>
                         <span class="tag">packaging</span>
                         <span class="tag">ubuntu</span>
                     </div>
-                    <a href="https://github.com/strabo231/pack" class="project-link">View on GitHub →</a>
-                    <div class="license">MIT License</div>
+                    <div class="project-footer">
+                        <span class="license">MIT License</span>
+                        <a href="https://github.com/strabo231/pack" class="project-link">View on GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div class="header" style="margin-top: 40px; text-align: center;">
-            <p style="color: #50FA7B;">★ Star repos you find useful | 💖 <a href="sponsor.html" style="color: #FFB86C;">Sponsor my work</a> | 🐛 Report bugs</p>
-        </div>
+        <footer>
+            <div class="footer-links">
+                <span>★ Star repos you find useful</span>
+                <span>|</span>
+                <a href="sponsor.html">💖 Sponsor my work</a>
+                <span>|</span>
+                <span>🐛 Report bugs</span>
+            </div>
+            <p>&copy; 2024 Sean Baggett. Building tools for developers.</p>
+        </footer>
     </div>
 </body>
 </html>
